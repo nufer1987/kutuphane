@@ -7,7 +7,7 @@ public class Kitap {
     public String yili;
     public int fiyat;
     public static int syc=1001;
-
+    public static int idx=0;
     public Kitap() {
     }
 
@@ -35,9 +35,9 @@ public class Kitap {
         System.out.println("fıyat");
         int f=a.nextInt();
         Kitap ktp3=new Kitap(b,c,d,f);
-        Main.ktpLst.add(2,ktp3);
+        Main.ktpLst.add(idx+2,ktp3);
         syc++;
-
+        idx++;
     }
     public static void kitapSil(){
 
@@ -59,8 +59,9 @@ public class Kitap {
     public void kitapGor(){
 
         for(int i = 0; i< Main.ktpLst.size(); i++){
-            System.out.println(Main.ktpLst.toString());
-        }System.out.println("toplam " + Main.ktpLst.size());
+            System.out.println(Main.ktpLst.get(i).toString());
+        }
+        //System.out.println("toplam " + Main.ktpLst.size());
 
     }
     public void giris(){
